@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Especial</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;  /* Fonte mais elegante */
+            background-color: #f8cce4;  /* Fundo rosa suave */
+            color: #333;  /* Texto escuro para melhor contraste */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;  /* Centraliza horizontalmente */
+            align-items: center;  /* Centraliza verticalmente */
+            height: 100vh;  /* Altura total da tela */
+        }
+
+        /* Fonte personalizada */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #D94E8E;  /* Cor suave de rosa para o título */
+            font-weight: 600;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #yes {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #yes:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        #no {
+            background-color: #FF5733;
+            color: white;
+        }
+
+        #no:hover {
+            background-color: #e64a19;
+            transform: translateY(-3px);
+        }
+
+        .container button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Você vai me levar ao Furetti Cucina <br> com tudo pago ❤️?</h1>
+        <div class="buttons">
+            <button id="yes" onclick="confirmar()">Sim</button>
+            <button id="no" onmouseover="fugir()">Não</button>
+        </div>
+    </div>
+    
+    <script>
+        function fugir() {
+            let button = document.getElementById("no");
+            let buttonsContainer = document.querySelector(".buttons");
+            let maxX = buttonsContainer.clientWidth - button.clientWidth - 20;
+            let maxY = buttonsContainer.clientHeight - button.clientHeight - 20;
+            let x = Math.random() * maxX;
+            let y = Math.random() * maxY;
+            button.style.transform = `translate(${x}px, ${y}px)`;
+        }
+
+        function confirmar() {
+            alert("Ótima escolha! ❤️ Nos vemos lá!");
+        }
+    </script>
+</body>
+</html>

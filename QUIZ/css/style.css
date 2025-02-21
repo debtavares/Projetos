@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#chat-box {
+    width: 80%;
+    max-width: 600px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bot-message {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.user-option {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-option:hover {
+    background-color: #d1d1d1;
+}
+
+.selected {
+    background-color: #8f8f8f; /* Cor para quando a opção for selecionada */
+    pointer-events: none; /* Desativa o clique após a seleção */
+}
+

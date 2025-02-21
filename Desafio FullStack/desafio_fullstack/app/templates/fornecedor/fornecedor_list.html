@@ -1,0 +1,24 @@
+<h1>Fornecedores</h1>
+<a href="{% url 'fornecedor_create' %}">Criar Novo Fornecedor</a>
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>CNPJ</th>
+            <th>Endereco</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fornecedor in fornecedores %}
+        <tr>
+            <td>{{ fornecedor.nome }}</td>
+            <td>{{ fornecedor.cnpj }}</td>
+            <td>{{ fornecedor.endereco }}</td>
+            <td>
+                <a href="{% url 'fornecedor_update' fornecedor.pk %}">Editar</a>
+                <a href="{% url 'fornecedor_delete' fornecedor.pk %}">Excluir</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
